@@ -32,7 +32,7 @@ class Greeter(hello_pb2_grpc.GreeterServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     hello_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_secure_port('[::]:50051')
     print("Server started. Listening on port 50051.")
     server.start()
     try:
