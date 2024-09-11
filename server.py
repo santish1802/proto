@@ -20,7 +20,17 @@ class Greeter(hello_pb2_grpc.GreeterServicer):
         name = request.name
         print(f"Received request to SayHello to {name}", file=sys.stderr)
         
-        # Rest of the method remains the same...
+        self.cursor.execute('SELECT mensaje FROM saludos WHERE nombre = ?', (name,))
+        result = self.cursor.fetchone()
+        
+        if result:
+            message = result[0]
+        else:
+            self.cursor.execute('SELECT mensaje FROM saludos WHERE nombre = "Default"')
+            result = self.cursor.fetchone()
+            message = result[0] if result else f"Hello, {name}!"
+
+        return hello_pb2.HelloReply(message=message)
 
 def serve():
     port = os.environ.get('PORT', '50051')
