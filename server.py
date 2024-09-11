@@ -4,7 +4,7 @@ import hello_pb2
 import hello_pb2_grpc
 import time
 import sqlite3
-
+print("server.py")
 class Greeter(hello_pb2_grpc.GreeterServicer):
     def __init__(self):
         self.conn = sqlite3.connect('nombre.db', check_same_thread=False)
