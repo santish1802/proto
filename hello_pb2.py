@@ -12,8 +12,8 @@ from google.protobuf.internal import builder as _builder
 _runtime_version.ValidateProtobufRuntimeVersion(
     _runtime_version.Domain.PUBLIC,
     5,
-    27,
-    2,
+    28,
+    1,
     '',
     'hello.proto'
 )

@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir grpcio grpcio-tools protobuf
 EXPOSE 50051
 
 # Comando para iniciar el servidor gRPC
-CMD ["python", "xd.py"]
+CMD ["python", "server.py"]
