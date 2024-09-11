@@ -4,7 +4,7 @@ from concurrent import futures
 import hello_pb2
 import hello_pb2_grpc
 import time
-import sqlite3
+import pysqlite3 as sqlite3
 
 print("server.py")
 
