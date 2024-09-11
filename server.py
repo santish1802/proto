@@ -10,7 +10,7 @@ class Greeter(hello_pb2_grpc.GreeterServicer):
         self.conn = sqlite3.connect('nombre.db', check_same_thread=False)
 
         self.cursor = self.conn.cursor()
-
+        print("xd")
     def SayHello(self, request, context):
         name = request.name
         print(f"Received request to SayHello to {name}")
