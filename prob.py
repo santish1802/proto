@@ -3,7 +3,7 @@ import hello_pb2
 import hello_pb2_grpc
 
 def run():
-    with grpc.insecure_channel('localhost:50051') as channel:
+    with grpc.insecure_channel('junction.proxy.rlwy.net:18083') as channel:
         stub = hello_pb2_grpc.GreeterStub(channel)
         
         # Lista de nombres para probar

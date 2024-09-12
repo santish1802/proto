@@ -1,7 +1,9 @@
+import os
 import grpc
 from concurrent import futures
 import hello_pb2
 import hello_pb2_grpc
+import time
 import sqlite3
 import sys
 
@@ -31,8 +33,11 @@ class Greeter(hello_pb2_grpc.GreeterServicer):
         return hello_pb2.HelloReply(message=message)
 
 def serve():
-    port = '50051'
-    print(f"Using fixed port: {port}", file=sys.stderr)
+    default_port = '50051'
+    port = os.environ.get('PORT', default_port)
+    print(f"Environment variable PORT: {os.environ.get('PORT')}", file=sys.stderr)
+    print(f"Default port: {default_port}", file=sys.stderr)
+    print(f"Selected port: {port}", file=sys.stderr)
     
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     hello_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
