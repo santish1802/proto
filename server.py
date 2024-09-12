@@ -7,7 +7,7 @@ import time
 import sqlite3
 import sys
 
-print("Mensaje de log", flush=True)
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', buffering=1)
 class Greeter(hello_pb2_grpc.GreeterServicer):
     def __init__(self):
         print("Initializing Greeter", file=sys.stdout)
