@@ -13,7 +13,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
     _runtime_version.Domain.PUBLIC,
     5,
     28,
-    1,
+    2,
     '',
     'hello.proto'
 )
