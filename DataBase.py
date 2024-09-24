@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS saludos
 
 # Insertar algunos datos de ejemplo
 datos = [
-    ('Jaremy', '¡Hola Jeremy! ¿Cómo está tu proyecto de GRPC?'),
     ('Jeremy', '¡Hola Jeremy! ¿Cómo está tu proyecto de GRPC?'),
     ('Santiago', 'Hey Santiago, ¿listo para el partido de fútbol?'),
     ('Jose', 'Jose, tu informe del mes pasado fue excelente.'),
